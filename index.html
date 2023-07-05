@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather.in</title>
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+
+    <section> <!-- All Bootstrap and animation CDN linking -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    </section>
+    
+    <section> <!-- CSS files Linking -->
+        <link rel="stylesheet" href="css/head-foot.css">
+        <link rel="stylesheet" href="css/main.css">
+    </section>
+</head>
+
+<body class="body" style="background-image: url(assets/background.avif); background-size: cover;">
+
+    <!-- Start of navigation bar -->
+    <nav id="header" class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand web-logo" href="/">
+                <img src="assets/favicon.png" class="d-inline-block align-top logo me-1" alt="logo">
+                Weather.in</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About this App</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End of navigation bar -->
+
+    <!-- Start of main wether of one city or state -->
+    <div id="main-city" class="container">
+        <form class="d-flex" role="search">
+            <input id="city" class="form-control me-2" type="search" placeholder="Search City" aria-label="Search">
+            <button class="btn btn-outline-primary" type="submit" id="submit">Search</button>
+        </form>
+        <h1 class="my-4 text-center">Weather for <span id="cityName"></span> city.</h1>
+        <main> 
+            <div class="row row-col-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div id="cards" class="card mb-4 rounded-3 animate__animated animate__flipInY">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal"><i class="bi bi-thermometer-half"></i> Temperature</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="temp2"></span><small class="text-muted fw-light"><sup><span>&#8451;</span></sup></small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Temperature is <span id="temp"></span></li>
+                                <li>Min Temperature is <span id="min_temp"></span></li>
+                                <li>Max temperature is <span id="max_temp"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="cards" class="card mb-4 rounded-3 animate__animated animate__flipInY">
+                        <div class="card-header py-3">
+                            <h4 class="my-0 fw-normal"><i class="bi bi-droplet-half"></i> Humidity Info</h4>
+                        </div>
+                        <div class="card-body"> 
+                            <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small class="text-muted fw-light"> %</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Degree is <span id="wind_degrees"></span></li>
+                                <li>Feels Like <span id="feels_like"></span></li>
+                                <li>Humidity is <span id="humidity"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="cards" class="card mb-4 rounded-3 animate__animated animate__flipInY">
+                        <div class="card-header py-3 ">
+                            <h4 class="my-0 fw-normal"><i class="bi bi-wind"></i> Wind Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small class="text-muted fw-light"> km/hr</small>
+                            </h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Speed is <span id="wind_speed"></span></li>
+                                <li>Sunrise Time is <span id="sunrise"></span></li>
+                                <li>Sunset Time is <span id="sunset"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- End of main wether of one city or state -->
+
+    <!-- Start of footer section -->
+    <div id="footer" class="container-fluid fixed-bottom bg-info">
+        <footer class="container d-flex flex-wrap justify-content-between align-items-center py-3">
+          <div class="col-md-4 d-flex align-items-center">
+            <a href="/" class="mb-3 me-2 mb-md-0 text-dark text-decoration-none lh-1">
+                <img src="assets/favicon.png" class="d-inline-block align-top logo me-1" alt="logo">
+            </a>
+            <span class="mb-3 mb-md-0 text-dark">&copy; 2023 Weather, Inc.</span>
+          </div>
+      
+          <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+            <li class="ms-3"><a class="text-dark" href="https://github.com/self-nasu"><i class="bi bi-github"></i></a></li>
+            <li class="ms-3"><a class="text-dark" href="https://www.linkedin.com/in/nasu1708/"><i class="bi bi-linkedin"></i></a></li>
+            <li class="ms-3"><a class="text-dark" href="https://www.instagram.com/self.nasu/"><i class="bi bi-instagram"></i></a></li>
+          </ul>
+        </footer>
+      </div>
+    <!-- End of footer section -->
+
+    <!-- All JavaScript Linking -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="JS/script.js"></script>
+</body>
+
+</html>

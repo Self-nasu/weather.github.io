@@ -1,0 +1,10 @@
+/* main city weather css */
+
+#main-city {
+    margin-top: 13vh;
+}
+#cards {
+    transition: box-shadow 0.2s ease-in-out;
+    background: transparent;
+    border-radius: 0px !important;
+}
